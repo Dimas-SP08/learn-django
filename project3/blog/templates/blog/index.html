@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block head_title%}
+{{title}}
+{%endblock head_title%}
+
+{%block content%} 
+    <img src="{% static '/blog/images/home.png' %}" alt="bannner">
+    <ul>
+        {% for link,name in nav %}
+        <li>
+            <a href="{{link}}">{{name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>{{subtitle}}</h2>
+{%endblock content%}

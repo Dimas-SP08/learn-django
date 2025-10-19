@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{%block head_title%}
+{{title}}
+{%endblock head_title%}
+
+{%block content%} 
+<ul>
+    {% for link,name in nav %}
+    <li>~
+        <a href="{{link}}">{{name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>{{subtitle}}</h2>
+{%endblock content%}

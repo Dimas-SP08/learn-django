@@ -4,10 +4,6 @@ def index(request):
     context = {
         'title':'portofolio',
         'subtitle':'welcome to my portofolio',
-        'nav': [
-            ['/','Home'],
-            ['/blog/','Blog'],
-            ['/kontak/','Kontak']
-        ]
+        'banner':'/images/home.png'
     }
     return render(request,'index.html',context)

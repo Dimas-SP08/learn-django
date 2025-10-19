@@ -9,3 +9,11 @@ def index(request):
         
     }
     return render(request,'blog/index.html',context)
+
+def detail_blog(request):
+    context = {
+        'title':'detail blog',
+        
+        
+    }
+    return render(request,'blog/detail_blog.html',context)

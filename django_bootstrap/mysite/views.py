@@ -7,3 +7,16 @@ def index(request):
         'banner':'/images/home.png'
     }
     return render(request,'index.html',context)
+
+def login(request):
+    context = {
+        'title':'login',
+        
+    }
+    return render(request,'login.html',context)
+def daftar(request):
+    context = {
+        'title':'daftar',
+        
+    }
+    return render(request,'daftar.html',context)

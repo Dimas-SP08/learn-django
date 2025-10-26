@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block head_title %}{{title}}{% endblock head_title %}
+
+{% block contents %}
+<h1>{{headline}}</h1>
+<h3>{{articles.judul}}</h3>
+<span>{{articles.pupdate}}</span>
+<p>{{articles.isi}}</p>
+<p>{{articles.kategori}}</p>
+<p>articles {{articles.slug}}</p>
+
+{% endblock contents %}

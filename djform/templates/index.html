@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{Judul}}</title>
+</head>
+<body>
+
+    <h1>{{Heading}}</h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        <label for="nama">nama :</label>
+        <input type="text" name="nama"  ></input>
+        <br><br>
+        <label for="nama">email :</label>
+        <input type="text" name="email" id='email'  ></input>
+        <br><br>
+        <button  type='submit'>kirim</button>
+        
+    </form>
+
+    <h2>nama = {{nama}}</h2>
+    <h2>email = {{email}}</h2>
+    
+</body>
+</html>

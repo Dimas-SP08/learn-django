@@ -1,13 +1,7 @@
 from django.shortcuts import render
-
+from .forms import KontakForm
 # Create your views here.
-from django import forms
 
-class KontakForm(forms.Form):
-    nama = forms.CharField()
-    email = forms.EmailField()
-    subjek = forms.CharField()
-    pesan = forms.CharField()
 
 
 def index(request):
@@ -19,4 +13,9 @@ def index(request):
     
     }
 
+    if request.method == 'POST':
+        context['nama'] =request.POST['nama']
+        context['email'] =request.POST['email']
+        context['pesan'] =request.POST['pesan']
+        context['subjek'] =request.POST['subjek']
     return render(request,'kontak/index.html',context)

@@ -10,7 +10,15 @@ class ArtikelForm(forms.ModelForm):
         model = Artikel
         fields = '__all__' #['penulis','judul','isi','kategori','tag','penerbit']
 
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
 
+        self.fields['judul'].widget.attrs.update({'class':'form-control','placeholder':'masukkan Judul artikel'})
+        self.fields['isi'].widget.attrs.update({'class':'form-control','placeholder':'masukkan Judul artikel'})
+        self.fields['kategori'].widget.attrs.update({'class':'form-select','placeholder':'masukkan Judul artikel'})
+        self.fields['penulis'].widget.attrs.update({'class':'form-control','placeholder':'masukkan Judul artikel'})
+        self.fields['penerbit'].widget.attrs.update({'class':'form-control','placeholder':'masukkan Judul artikel'})
+        self.fields['tag'].widget.attrs.update({'class':'form-control','placeholder':'masukkan Judul artikel'})
 
 
 

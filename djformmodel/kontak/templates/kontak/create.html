@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+{{Judul}}
+{% endblock head_title %}
+
+{% block contents %}
+<h1>{{Heading}}</h1>
+<h3>
+    {{salah}}
+</h3>
+<form method='POST'>
+    {% csrf_token %}
+    <table>
+        {{kontak_f.as_table}}
+    </table>
+    <button type="submit">submit</button>
+</form>
+{% endblock contents %}

@@ -6,6 +6,7 @@ class Tujuan(models.Model):
     nm_penumpang = models.CharField(max_length=50)
     nm_pengemudi = models.CharField(max_length=50)
     tujuan = models.TextField()
+    profile = models.ImageField(blank=True,default='profil.png')
     slug = models.SlugField(blank=True, editable=False)
  
     def save(self, *args, **kwargs):

@@ -1,0 +1,17 @@
+
+    <ul>
+        {% if  request.user.is_authenticated %}
+        {% comment %} ini buat ketika ative {% endcomment %}
+        <li><a href="{% url "index" %}">beranda</a></li>
+        <li><a href="{%url 'logout' %}">logout</a></li>
+        {% else %}
+        {% comment %} ini sebaliknya {% endcomment %}
+        <li><a href="{% url "index" %}">beranda</a></li>
+        <li><a href="{% url "login" %}">login</a></li>
+        <li><a href="{% url "register" %}">Register</a></li>
+        {% endif %}
+        
+        
+        
+    </ul>
+  

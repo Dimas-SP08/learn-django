@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+</head>
+<body>
+
+    {% if messages %}
+    
+        {% for pesan in messages %}
+        <p>{{pesan}}</p>
+        {% endfor %}
+
+    {% endif %}
+
+
+    {% include "navbar.html" %}
+    <h1>halaman {{judul}}</h1>
+
+
+
+    <form method= 'post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type='submit'>Register</button>
+
+    </form>
+</body>
+</html>

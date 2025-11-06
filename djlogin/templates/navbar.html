@@ -3,6 +3,8 @@
         {% if  request.user.is_authenticated %}
         {% comment %} ini buat ketika ative {% endcomment %}
         <li><a href="{% url "index" %}">beranda</a></li>
+        <li><a href="{% url "ubah_password" %}">ubah pw</a></li>
+        <li><a href="{% url "change_password" %}">change pw</a></li>
         <li><a href="{%url 'logout' %}">logout</a></li>
         {% else %}
         {% comment %} ini sebaliknya {% endcomment %}

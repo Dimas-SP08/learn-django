@@ -1,11 +1,55 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from .forms import RegisterUserForm
+from .forms import RegisterUserForm,ChangePasswordUserForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
+@login_required(login_url='/')
+def change_password(request):
+    
+
+    if request.method == 'POST':
+        form = ChangePasswordUserForm(request.user, request.POST or None)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'congrats anda telah brerhasil megganti password')
+            return redirect('index')
+        
+        else:
+            return redirect('change_password')
+        
+    else:
+        form = ChangePasswordUserForm(request.user)
+        
+    context = {
+        'judul':'ubah passwrd',
+        'form':form,
+    }
 
 
 
+
+    return render(request,'change_password.html',context)
+
+@login_required(login_url='/')
+def ubah_password(request):
+    pilih_user = User.objects.get(username= request.user)
+    if request.method == 'POST':
+        password = request.POST['password']
+        pilih_user.set_password(password)
+        pilih_user.save()
+        messages.success(request,'congrats anda telah brerhasil megganti password')
+        return redirect('index')
+
+    context = {
+        'judul':'ubah passwrd'
+    }
+
+
+
+
+    return render(request,'ubah_password.html',context)
 
 
 def index(request):
